@@ -1,4 +1,4 @@
-package com.ait.orden_conductor;
+package com.ait.ordenConductor;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

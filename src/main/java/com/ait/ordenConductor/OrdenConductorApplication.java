@@ -1,4 +1,4 @@
-package com.ait.orden_conductor;
+package com.ait.ordenConductor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
