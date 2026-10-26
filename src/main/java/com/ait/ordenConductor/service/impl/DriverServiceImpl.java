@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.ait.ordenConductor.dto.DriverRequestDTO;
 import com.ait.ordenConductor.dto.DriverResponseDTO;
 import com.ait.ordenConductor.dto.DriverStatusRequestDTO;
 import com.ait.ordenConductor.entity.DriverEntity;
+import com.ait.ordenConductor.exception.ExcepcionGenerica;
 import com.ait.ordenConductor.repository.DriverRepository;
 import com.ait.ordenConductor.service.DriverService;
 
@@ -49,7 +51,7 @@ public class DriverServiceImpl implements DriverService {
         Optional<DriverEntity> entityOptional = repository.findById(id);
 
         if(entityOptional.isEmpty()) {
-            //TODO: Lanzar excepcion
+            throw new ExcepcionGenerica("No se encontró el ID de conductor" + id, new ArrayList<>() , HttpStatus.NOT_FOUND);
         }
 
         DriverEntity entity = entityOptional.get();
